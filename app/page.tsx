@@ -42,6 +42,8 @@ export default function Home() {
 
   function Navbar() {
     const [open, setOpen] = useState(false);
+    // Fonction pour fermer le menu mobile
+    const handleMenuClick = () => setOpen(false);
     return (
       <nav className="w-full bg-gray-900/80 backdrop-blur shadow fixed top-0 left-0 z-50">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-4 py-3">
@@ -68,12 +70,11 @@ export default function Home() {
         {/* Menu mobile */}
         {open && (
           <ul className="sm:hidden border-t px-4 pb-4 space-y-2 font-semibold text-white bg-gray-900">
-            <li><Link href="/" className="block py-2 hover:text-cyan-400">Accueil</Link></li>
-            <li><a href="#projects" className="block py-2 hover:text-cyan-400">Projets</a></li>
-            <li><a href="#skills" className="block py-2 hover:text-cyan-400">Compétences</a></li>
-            <li><a href="#passions" className="block py-2 hover:text-cyan-400">Passions</a></li>
-            <li><a href="#contact" className="block py-2 hover:text-cyan-400">Contact</a></li>
-
+            <li><a href="/" className="block py-2 hover:text-cyan-400" onClick={handleMenuClick}>Accueil</a></li>
+            <li><a href="#projects" className="block py-2 hover:text-cyan-400" onClick={handleMenuClick}>Projets</a></li>
+            <li><a href="#skills" className="block py-2 hover:text-cyan-400" onClick={handleMenuClick}>Compétences</a></li>
+            <li><a href="#passions" className="block py-2 hover:text-cyan-400" onClick={handleMenuClick}>Passions</a></li>
+            <li><a href="#contact" className="block py-2 hover:text-cyan-400" onClick={handleMenuClick}>Contact</a></li>
           </ul>
         )}
       </nav>
@@ -105,7 +106,7 @@ export default function Home() {
             <span className="absolute bottom-2 right-2 bg-green-400 w-5 h-5 rounded-full border-2 border-white"></span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-cyan-300">
-            Salut, je suis <span className="text-gray-100">Jerry ML</span>
+            Salut, je suis <span className="text-gray-100">Jerry&nbsp;ML</span>
           </h1>
           <p className="text-lg text-gray-200 max-w-xl text-center">
             Passionné par la création d’applications  performantes, modernes et accessibles.
