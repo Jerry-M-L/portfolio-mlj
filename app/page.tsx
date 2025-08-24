@@ -14,7 +14,6 @@ export default function Home() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Ici, tu peux ajouter l'envoi vers un service (ex: Formspree, EmailJS, etc.)
     setSent(true);
     setForm({ nom: "", email: "", message: "" });
   };
@@ -71,7 +70,9 @@ export default function Home() {
             <li><Link href="/" className="block py-2 hover:text-cyan-400">Accueil</Link></li>
             <li><a href="#projects" className="block py-2 hover:text-cyan-400">Projets</a></li>
             <li><a href="#skills" className="block py-2 hover:text-cyan-400">Compétences</a></li>
+            <li><a href="#passions" className="block py-2 hover:text-cyan-400">Passions</a></li>
             <li><a href="#contact" className="block py-2 hover:text-cyan-400">Contact</a></li>
+
           </ul>
         )}
       </nav>
@@ -107,12 +108,11 @@ export default function Home() {
             <span className="absolute bottom-2 right-2 bg-green-400 w-5 h-5 rounded-full border-2 border-white"></span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-cyan-300">
-            Salut, je suis <span className="text-gray-100">Développeur Web</span>
+            Salut, je suis <span className="text-gray-100">Jerry ML</span>
           </h1>
           <p className="text-lg text-gray-200 max-w-xl text-center">
-            Passionné par la création d’applications web performantes, modernes et accessibles.<br />
-            J’aime résoudre des problèmes complexes et apprendre de nouvelles technologies.
-          </p>
+            Passionné par la création d’applications  performantes, modernes et accessibles.
+            </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
             <a
               href="#projects"
@@ -132,7 +132,7 @@ export default function Home() {
 
       {/* COMPÉTENCES */}
       <section id="skills" className="max-w-4xl mx-auto py-16 px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Compétences principales</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Compétences</h2>
         <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
           <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition-colors duration-300">
             {icons.react}
@@ -165,29 +165,56 @@ export default function Home() {
       <section id="projects" className="max-w-5xl mx-auto py-16 px-4">
         <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Mes projets</h2>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {/* Exemple de projet */}
+          {/* Projet vitrine 1 */}
           <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-colors duration-300 p-6 flex flex-col items-center group">
-            <Image src="/images/icon0.svg" alt="Projet 1" width={80} height={80} className="mb-4 group-hover:scale-110 transition" />
-            <h3 className="text-xl font-bold mb-2 text-gray-100">Projet Web Moderne</h3>
-            <p className="text-gray-300 text-center mb-4">Application web responsive avec Next.js, Tailwind CSS et API REST.</p>
-            <a href="#" className="text-cyan-400 font-semibold hover:underline">Voir le projet</a>
+            <Image src="/images/icon0.svg" alt="Site Vitrine 1" width={80} height={80} className="mb-4 group-hover:scale-110 transition" />
+            <h3 className="text-xl font-bold mb-2 text-gray-100">Site Vitrine - Artisan</h3>
+            <p className="text-gray-300 text-center mb-4">Site vitrine moderne pour un artisan local, avec présentation des services et galerie photo.</p>
+            <Link href="/projets/artisan" className="text-cyan-400 font-semibold hover:underline">Voir le projet</Link>
           </div>
+          {/* Projet vitrine 2 */}
           <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex flex-col items-center group">
-            <Image src="/images/icon1.png" alt="Projet 2" width={80} height={80} className="mb-4 group-hover:scale-110 transition" />
-            <h3 className="text-xl font-bold mb-2 text-gray-100">Dashboard Analytics</h3>
-            <p className="text-gray-300 text-center mb-4">Dashboard interactif avec visualisation de données en temps réel.</p>
-            <a href="#" className="text-cyan-400 font-semibold hover:underline">Voir le projet</a>
+            <Image src="/images/icon1.png" alt="Site Vitrine 2" width={80} height={80} className="mb-4 group-hover:scale-110 transition" />
+            <h3 className="text-xl font-bold mb-2 text-gray-100">Site Vitrine - Association</h3>
+            <p className="text-gray-300 text-center mb-4">Site vitrine pour une association, avec agenda, actualités et formulaire de contact.</p>
+            <Link href="/projets/association" className="text-cyan-400 font-semibold hover:underline">Voir le projet</Link>
           </div>
+          {/* Projet vitrine 3 */}
           <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex flex-col items-center group">
-            <Image src="/images/MLJ Dev.png" alt="Projet 3" width={80} height={80} className="mb-4 group-hover:scale-110 transition" />
-            <h3 className="text-xl font-bold mb-2 text-gray-100">Portfolio créatif</h3>
-            <p className="text-gray-300 text-center mb-4">Site portfolio avec animations, transitions et design unique.</p>
-            <a href="#" className="text-cyan-400 font-semibold hover:underline">Voir le projet</a>
+            <Image src="/images/MLJ Dev.png" alt="Site Vitrine 3" width={80} height={80} className="mb-4 group-hover:scale-110 transition" />
+            <h3 className="text-xl font-bold mb-2 text-gray-100">Site Vitrine - Entreprise</h3>
+            <p className="text-gray-300 text-center mb-4">Site vitrine pour une petite entreprise, avec présentation, témoignages et contact.</p>
+            <Link href="/projets/entreprise" className="text-cyan-400 font-semibold hover:underline">Voir le projet</Link>
           </div>
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* PASSION AGRICULTURE */}
+      <section id="passions" className="max-w-5xl mx-auto py-20 px-4">
+        <h2 className="text-4xl font-extrabold mb-8 text-center bg-gradient-to-r from-blue-400 to-lime-300 bg-clip-text text-transparent drop-shadow-lg">Ma passion pour l'agriculture</h2>
+        <p className="text-xl text-gray-100 mb-10 text-center max-w-3xl mx-auto leading-relaxed">
+          L’agriculture est pour moi bien plus qu’un métier : c’est une philosophie de vie, un lien profond avec la terre et le vivant. J’aime observer la nature, cultiver, apprendre des saisons et partager la beauté des paysages ruraux. Voici quelques clichés pris lors de mes balades et travaux, qui illustrent mon attachement à ce monde authentique et inspirant.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {[1,2,3,4,5].map((num) => (
+            <div key={num} className="relative group overflow-hidden rounded-2xl shadow-xl bg-gradient-to-br from-green-900/60 to-lime-800/40">
+              <Image
+                src={`/images/agri${num}.jpg`}
+                alt={`Photo agriculture ${num}`}
+                width={400}
+                height={260}
+                className="transition-transform duration-500 group-hover:scale-105 group-hover:brightness-110 object-cover w-full h-[260px] rounded-2xl"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-3 text-gray-100 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Photo prise sur le terrain
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FORMULAIRE DE CONTACT*/}
       <section id="contact" className="max-w-xl mx-auto py-16 px-4">
         <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Contactez-moi</h2>
         {sent ? (
