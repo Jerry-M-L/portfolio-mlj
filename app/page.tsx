@@ -61,6 +61,7 @@ export default function Home() {
             <li><Link href="/" className="hover:text-cyan-400">Accueil</Link></li>
             <li><a href="#projects" className="hover:text-cyan-400">Projets</a></li>
             <li><a href="#skills" className="hover:text-cyan-400">Compétences</a></li>
+            <li><a href="#passions" className="hover:text-cyan-400">Passions</a></li>
             <li><a href="#contact" className="hover:text-cyan-400">Contact</a></li>
           </ul>
         </div>
@@ -100,10 +101,6 @@ export default function Home() {
               width={140}
               height={140}
               className="rounded-full border-4 border-blue-300 shadow-xl"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = "/images/icon1.png";
-              }}
             />
             <span className="absolute bottom-2 right-2 bg-green-400 w-5 h-5 rounded-full border-2 border-white"></span>
           </div>
@@ -113,11 +110,13 @@ export default function Home() {
           <p className="text-lg text-gray-200 max-w-xl text-center">
             Passionné par la création d’applications  performantes, modernes et accessibles.
             </p>
+          <p className="text-lg text-gray-200 max-w-xl text-center">
+            ML signifie MBENDA-LECA
+           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
             <a
               href="#projects"
-              className="px-6 py-2 bg-cyan-500 text-gray-900 rounded hover:bg-cyan-400 transition font-semibold shadow"
-            >
+              className="px-6 py-2 bg-cyan-500 text-gray-900 rounded hover:bg-cyan-400 transition font-semibold shadow" >
               Voir mes projets
             </a>
             <a
@@ -167,36 +166,36 @@ export default function Home() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* Projet vitrine 1 */}
           <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-colors duration-300 p-6 flex flex-col items-center group">
-            <Image src="/images/icon0.svg" alt="Site Vitrine 1" width={80} height={80} className="mb-4 group-hover:scale-110 transition" />
-            <h3 className="text-xl font-bold mb-2 text-gray-100">Site Vitrine - Artisan</h3>
-            <p className="text-gray-300 text-center mb-4">Site vitrine moderne pour un artisan local, avec présentation des services et galerie photo.</p>
-            <Link href="/projets/artisan" className="text-cyan-400 font-semibold hover:underline">Voir le projet</Link>
+            <Image src="/images/artisan1.jpg" alt="Site Vitrine 1" width={2848} height={4288} className="mb-4 group-hover:scale-110 transition" />
+            <h3 className="text-xl font-bold mb-2 text-gray-100">Artisan</h3>
+            <p className="text-gray-300 text-justify mb-4">Site moderne pour la mise en valeur des produits artisanals locaux, avec présentation des services et galerie photo.</p>
+            <Link href="#" className="mt-auto text-cyan-400 px-2 py-1 border border-cyan-400 rounded hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
           </div>
           {/* Projet vitrine 2 */}
           <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex flex-col items-center group">
-            <Image src="/images/icon1.png" alt="Site Vitrine 2" width={80} height={80} className="mb-4 group-hover:scale-110 transition" />
-            <h3 className="text-xl font-bold mb-2 text-gray-100">Site Vitrine - Association</h3>
-            <p className="text-gray-300 text-center mb-4">Site vitrine pour une association, avec agenda, actualités et formulaire de contact.</p>
-            <Link href="/projets/association" className="text-cyan-400 font-semibold hover:underline">Voir le projet</Link>
+            <Image src="/images/association.jpg" alt="Site Vitrine 2" width={2848} height={4288} className="mb-4 group-hover:scale-110 transition" />
+            <h3 className="text-xl font-bold mb-2 text-gray-100">Association</h3>
+            <p className="text-gray-300 text-justify mb-4">Ce site a pour objectif accompagner les femmes afin de promouvoir leur autonomie, leur leadership et leur rôle actif dans le developpement de la communauté.</p>
+            <Link href="#" className="mt-auto text-cyan-400 px-2 py-1 border border-cyan-400 rounded  hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
           </div>
           {/* Projet vitrine 3 */}
           <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex flex-col items-center group">
-            <Image src="/images/MLJ Dev.png" alt="Site Vitrine 3" width={80} height={80} className="mb-4 group-hover:scale-110 transition" />
-            <h3 className="text-xl font-bold mb-2 text-gray-100">Site Vitrine - Entreprise</h3>
-            <p className="text-gray-300 text-center mb-4">Site vitrine pour une petite entreprise, avec présentation, témoignages et contact.</p>
-            <Link href="/projets/entreprise" className="text-cyan-400 font-semibold hover:underline">Voir le projet</Link>
+            <Image src="/images/formation.jpg" alt="Site Vitrine 3" width={2848} height={4288} className="mb-4 group-hover:scale-110 transition" />
+            <h3 className="text-xl font-bold mb-2 text-gray-100">Formation</h3>
+            <p className="text-gray-300 text-justify mb-4">Site pour les formations certifiantes dans de divers domaines: technique, professionnel et academique.</p>
+            <Link href="#" className="  mt-auto text-cyan-400 px-2 py-1 border border-cyan-400 rounded  hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
           </div>
         </div>
       </section>
 
       {/* PASSION AGRICULTURE */}
-      <section id="passions" className="max-w-5xl mx-auto py-20 px-4">
+      <section id="passions" className="max-w-5xl mx-auto py-10 px-4">
         <h2 className="text-4xl font-extrabold mb-8 text-center bg-gradient-to-r from-blue-400 to-lime-300 bg-clip-text text-transparent drop-shadow-lg">Ma passion pour l'agriculture</h2>
-        <p className="text-xl text-gray-100 mb-10 text-center max-w-3xl mx-auto leading-relaxed">
-          L’agriculture est pour moi bien plus qu’un métier : c’est une philosophie de vie, un lien profond avec la terre et le vivant. J’aime observer la nature, cultiver, apprendre des saisons et partager la beauté des paysages ruraux. Voici quelques clichés pris lors de mes balades et travaux, qui illustrent mon attachement à ce monde authentique et inspirant.
+        <p className="text-xl text-gray-100 mb-10 text-justify max-w-3xl mx-auto leading-relaxed">
+          L’agriculture est pour moi bien plus qu’un métier : c’est une philosophie de vie, un lien profond avec la terre et le vivant. J’aime observer la nature, cultiver, apprendre  et partager la beauté des paysages ruraux. Voici quelques clichés pris lors de mes balades et travaux, qui illustrent mon attachement à ce monde authentique et inspirant.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {[1,2,3,4,5].map((num) => (
+          {[1,2,3].map((num) => (
             <div key={num} className="relative group overflow-hidden rounded-2xl shadow-xl bg-gradient-to-br from-green-900/60 to-lime-800/40">
               <Image
                 src={`/images/agri${num}.jpg`}
