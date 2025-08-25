@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { FaReact, FaNodeJs, FaGitAlt, FaServer } from "react-icons/fa";
+import { SiTypescript, SiTailwindcss } from "react-icons/si";
 
 export default function Home() {
   const [form, setForm] = useState({ nom: "", email: "", message: "" });
@@ -18,26 +20,14 @@ export default function Home() {
     setForm({ nom: "", email: "", message: "" });
   };
 
-  // Icônes Heroicons (SVG) pour les compétences
+  // Icônes React (react-icons)
   const icons = {
-    react: (
-      <svg className="w-7 h-7 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="2.5" fill="currentColor"/><path stroke="currentColor" strokeWidth="1.5" d="M12 2c2.5 0 4.5 4.5 4.5 10s-2 10-4.5 10-4.5-4.5-4.5-10S9.5 2 12 2z"/><ellipse cx="12" cy="12" rx="10" ry="4.5" stroke="currentColor" strokeWidth="1.5"/></svg>
-    ),
-    ts: (
-      <svg className="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect width="20" height="20" x="2" y="2" rx="5" fill="currentColor" opacity=".1"/><text x="7" y="17" fontSize="10" fill="currentColor">TS</text></svg>
-    ),
-    node: (
-      <svg className="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/><text x="7" y="17" fontSize="10" fill="currentColor">Node</text></svg>
-    ),
-    tailwind: (
-      <svg className="w-7 h-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 15c1.5-2.5 4-4 7-4s5.5 1.5 7 4" stroke="currentColor" strokeWidth="1.5"/><path d="M3 9c1.5-2.5 4-4 7-4s5.5 1.5 7 4" stroke="currentColor" strokeWidth="1.5"/></svg>
-    ),
-    api: (
-      <svg className="w-7 h-7 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect width="20" height="20" x="2" y="2" rx="5" stroke="currentColor" strokeWidth="1.5"/><text x="7" y="17" fontSize="10" fill="currentColor">API</text></svg>
-    ),
-    git: (
-      <svg className="w-7 h-7 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/><text x="7" y="17" fontSize="10" fill="currentColor">Git</text></svg>
-    ),
+    react: <FaReact className="w-7 h-7 text-sky-500" />,
+    ts: <SiTypescript className="w-7 h-7 text-blue-600" />,
+    node: <FaNodeJs className="w-7 h-7 text-green-600" />,
+    tailwind: <SiTailwindcss className="w-7 h-7 text-cyan-400" />,
+  api: <FaServer className="w-7 h-7 text-orange-500" />,
+    git: <FaGitAlt className="w-7 h-7 text-rose-500" />,
   };
 
   function Navbar() {
@@ -54,17 +44,15 @@ export default function Home() {
               onClick={() => setOpen(!open)}
               aria-label="Ouvrir le menu"
             >
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              <FaReact className="w-7 h-7 text-emerald-400" />
             </button>
           </div>
           <ul className="hidden sm:flex space-x-8 font-semibold text-white">
-            <li><Link href="/" className="hover:text-emerald-600">Accueil</Link></li>
-            <li><a href="#projects" className="hover:text-emerald-600">Projets</a></li>
-            <li><a href="#skills" className="hover:text-emerald-600">Compétences</a></li>
-            <li><a href="#passions" className="hover:text-emerald-600">Passions</a></li>
-            <li><a href="#contact" className="hover:text-emerald-600">Contact</a></li>
+            <li><Link href="/" className="hover:text-emerald-600 flex items-center gap-2"><FaReact className="w-5 h-5 text-emerald-400" />Accueil</Link></li>
+            <li><a href="#projects" className="hover:text-emerald-600 flex items-center gap-2"><FaNodeJs className="w-5 h-5 text-green-400" />Projets</a></li>
+            <li><a href="#skills" className="hover:text-emerald-600 flex items-center gap-2"><SiTypescript className="w-5 h-5 text-blue-400" />Compétences</a></li>
+            <li><a href="#passions" className="hover:text-emerald-600 flex items-center gap-2"><SiTailwindcss className="w-5 h-5 text-cyan-400" />Passions</a></li>
+            <li><a href="#contact" className="hover:text-emerald-600 flex items-center gap-2"><FaGitAlt className="w-5 h-5 text-rose-400" />Contact</a></li>
           </ul>
         </div>
         {/* Menu mobile */}
@@ -72,31 +60,31 @@ export default function Home() {
           <ul className="sm:hidden border-t px-4 pb-4 space-y-2 font-semibold bg-gray-950">
             <li>
               <a href="/" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <svg className="w-5 h-5 text-green-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6" /></svg>
+                <FaReact className="w-5 h-5 text-emerald-400" />
                 Accueil
               </a>
             </li>
             <li>
               <a href="#projects" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <svg className="w-5 h-5 text-green-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6m-6 0h6" /></svg>
+                <FaNodeJs className="w-5 h-5 text-green-400" />
                 Projets
               </a>
             </li>
             <li>
               <a href="#skills" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <svg className="w-5 h-5 text-green-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 01-8 0" /><circle cx="12" cy="7" r="4" /></svg>
+                <SiTypescript className="w-5 h-5 text-blue-400" />
                 Compétences
               </a>
             </li>
             <li>
               <a href="#passions" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <svg className="w-5 h-5 text-green-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c2.54 0 4.04 1.61 4.5 3.09C12.46 4.61 13.96 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
+                <SiTailwindcss className="w-5 h-5 text-cyan-400" />
                 Passions
               </a>
             </li>
             <li>
               <a href="#contact" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <svg className="w-5 h-5 text-green-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 12v1a4 4 0 01-8 0v-1m8 0a4 4 0 00-8 0m8 0V8a4 4 0 00-8 0v4" /></svg>
+                <FaGitAlt className="w-5 h-5 text-rose-400" />
                 Contact
               </a>
             </li>
