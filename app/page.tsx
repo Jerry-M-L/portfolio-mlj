@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { FaReact, FaNodeJs, FaGitAlt, FaServer } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaGitAlt, FaServer, FaTools, FaFolderOpen, FaHome, FaLeaf, FaEnvelope } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss } from "react-icons/si";
 
 export default function Home() {
@@ -48,11 +48,11 @@ export default function Home() {
             </button>
           </div>
           <ul className="hidden sm:flex space-x-8 font-semibold text-white">
-            <li><Link href="/" className="hover:text-emerald-600 flex items-center gap-2"><FaReact className="w-5 h-5 text-emerald-400" />Accueil</Link></li>
-            <li><a href="#projects" className="hover:text-emerald-600 flex items-center gap-2"><FaNodeJs className="w-5 h-5 text-green-400" />Projets</a></li>
-            <li><a href="#skills" className="hover:text-emerald-600 flex items-center gap-2"><SiTypescript className="w-5 h-5 text-blue-400" />Compétences</a></li>
-            <li><a href="#passions" className="hover:text-emerald-600 flex items-center gap-2"><SiTailwindcss className="w-5 h-5 text-cyan-400" />Passions</a></li>
-            <li><a href="#contact" className="hover:text-emerald-600 flex items-center gap-2"><FaGitAlt className="w-5 h-5 text-rose-400" />Contact</a></li>
+            <li><Link href="/" className="hover:text-emerald-600 flex items-center gap-2"><FaHome className="w-5 h-5 text-emerald-400" />Accueil</Link></li>
+            <li><a href="#projects" className="hover:text-emerald-600 flex items-center gap-2"><FaFolderOpen className="w-5 h-5 text-green-400" />Projets</a></li>
+            <li><a href="#skills" className="hover:text-emerald-600 flex items-center gap-2"><FaTools className="w-5 h-5 text-blue-400" />Compétences</a></li>
+            <li><a href="#passions" className="hover:text-emerald-600 flex items-center gap-2"><FaLeaf className="w-5 h-5 text-cyan-400" />Passions</a></li>
+            <li><a href="#contact" className="hover:text-emerald-600 flex items-center gap-2"><FaEnvelope className="w-5 h-5 text-rose-400" />Contact</a></li>
           </ul>
         </div>
         {/* Menu mobile */}
@@ -60,31 +60,31 @@ export default function Home() {
           <ul className="sm:hidden border-t px-4 pb-4 space-y-2 font-semibold bg-gray-950">
             <li>
               <a href="/" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <FaReact className="w-5 h-5 text-emerald-400" />
+                <FaHome className="w-5 h-5 text-emerald-400" />
                 Accueil
               </a>
             </li>
             <li>
               <a href="#projects" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <FaNodeJs className="w-5 h-5 text-green-400" />
+                <FaFolderOpen className="w-5 h-5 text-green-400" />
                 Projets
               </a>
             </li>
             <li>
               <a href="#skills" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <SiTypescript className="w-5 h-5 text-blue-400" />
+                <FaTools className="w-5 h-5 text-blue-400" />
                 Compétences
               </a>
             </li>
             <li>
               <a href="#passions" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <SiTailwindcss className="w-5 h-5 text-cyan-400" />
+                <FaLeaf className="w-5 h-5 text-cyan-400" />
                 Passions
               </a>
             </li>
             <li>
               <a href="#contact" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <FaGitAlt className="w-5 h-5 text-rose-400" />
+                <FaEnvelope className="w-5 h-5 text-rose-400" />
                 Contact
               </a>
             </li>
