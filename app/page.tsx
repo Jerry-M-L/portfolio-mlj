@@ -47,7 +47,7 @@ export default function Home() {
     return (
       <nav className="w-full bg-gray-900/80 backdrop-blur shadow fixed top-0 left-0 z-50">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-4 py-3">
-          <Link href="/" className="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent">Mon Portfolio</Link>
+          <Link href="/" className="text-2xl font-extrabold bg-gradient-to-r from-green-900 to-emerald-600 bg-clip-text text-transparent">Lecreatif</Link>
           <div className="flex items-center gap-2">
             <button
               className="sm:hidden p-2 rounded hover:bg-gray-800"
@@ -60,36 +60,52 @@ export default function Home() {
             </button>
           </div>
           <ul className="hidden sm:flex space-x-8 font-semibold text-white">
-            <li><Link href="/" className="hover:text-cyan-400">Accueil</Link></li>
-            <li><a href="#projects" className="hover:text-cyan-400">Projets</a></li>
-            <li><a href="#skills" className="hover:text-cyan-400">Compétences</a></li>
-            <li><a href="#passions" className="hover:text-cyan-400">Passions</a></li>
-            <li><a href="#contact" className="hover:text-cyan-400">Contact</a></li>
+            <li><Link href="/" className="hover:text-emerald-600">Accueil</Link></li>
+            <li><a href="#projects" className="hover:text-emerald-600">Projets</a></li>
+            <li><a href="#skills" className="hover:text-emerald-600">Compétences</a></li>
+            <li><a href="#passions" className="hover:text-emerald-600">Passions</a></li>
+            <li><a href="#contact" className="hover:text-emerald-600">Contact</a></li>
           </ul>
         </div>
         {/* Menu mobile */}
         {open && (
-          <ul className="sm:hidden border-t px-4 pb-4 space-y-2 font-semibold text-white bg-gray-900">
-            <li><a href="/" className="block py-2 hover:text-cyan-400" onClick={handleMenuClick}>Accueil</a></li>
-            <li><a href="#projects" className="block py-2 hover:text-cyan-400" onClick={handleMenuClick}>Projets</a></li>
-            <li><a href="#skills" className="block py-2 hover:text-cyan-400" onClick={handleMenuClick}>Compétences</a></li>
-            <li><a href="#passions" className="block py-2 hover:text-cyan-400" onClick={handleMenuClick}>Passions</a></li>
-            <li><a href="#contact" className="block py-2 hover:text-cyan-400" onClick={handleMenuClick}>Contact</a></li>
+          <ul className="sm:hidden border-t px-4 pb-4 space-y-2 font-semibold bg-gray-950">
+            <li>
+              <a href="/" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
+                <svg className="w-5 h-5 text-green-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6" /></svg>
+                Accueil
+              </a>
+            </li>
+            <li>
+              <a href="#projects" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
+                <svg className="w-5 h-5 text-green-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6m-6 0h6" /></svg>
+                Projets
+              </a>
+            </li>
+            <li>
+              <a href="#skills" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
+                <svg className="w-5 h-5 text-green-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 01-8 0" /><circle cx="12" cy="7" r="4" /></svg>
+                Compétences
+              </a>
+            </li>
+            <li>
+              <a href="#passions" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
+                <svg className="w-5 h-5 text-green-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c2.54 0 4.04 1.61 4.5 3.09C12.46 4.61 13.96 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
+                Passions
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
+                <svg className="w-5 h-5 text-green-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 12v1a4 4 0 01-8 0v-1m8 0a4 4 0 00-8 0m8 0V8a4 4 0 00-8 0v4" /></svg>
+                Contact
+              </a>
+            </li>
           </ul>
         )}
       </nav>
     );
   }
-
-
-  useEffect(() => {
-    document.documentElement.classList.add('dark');
-    return () => {
-      document.documentElement.classList.remove('dark');
-    };
-  }, []);
-
-  return (
+   return (
     <>
       <Navbar />
       {/* HEADER */}
@@ -97,16 +113,16 @@ export default function Home() {
         <div className="flex flex-col items-center gap-4">
           <div className="relative">
             <Image
-              src="/profil.jpg"
+              src="/images/profil.jpg"
               alt="Photo de profil"
               width={140}
               height={140}
-              className="rounded-full border-4 border-blue-300 shadow-xl"
+              className="rounded-full border-4 border-blue-100 shadow-xl"
             />
             <span className="absolute bottom-2 right-2 bg-green-400 w-5 h-5 rounded-full border-2 border-white"></span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-cyan-300">
-            Salut, je suis <span className="text-gray-100">Jerry&nbsp;ML</span>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-emerald-600">
+            Salut, je suis <span className="text-gray-100">Jerry ML</span>
           </h1>
           <p className="text-lg text-gray-200 max-w-xl text-center">
             Passionné par la création d’applications  performantes, modernes et accessibles.
@@ -117,12 +133,12 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
             <a
               href="#projects"
-              className="px-6 py-2 bg-cyan-500 text-gray-900 rounded hover:bg-cyan-400 transition font-semibold shadow" >
+              className="px-6 py-2 bg-emerald-600  rounded hover:bg-emerald-300 transition font-semibold shadow" >
               Voir mes projets
             </a>
             <a
               href="/cv"
-              className="px-6 py-2 border border-cyan-400 text-cyan-400 rounded hover:bg-gray-900 transition font-semibold shadow"
+              className="px-6 py-2 border border-emerald-600 text-emerald-600 rounded hover:bg-gray-900 transition font-semibold shadow"
             >
               Voir mon CV
             </a>
@@ -170,28 +186,28 @@ export default function Home() {
             <Image src="/images/artisan1.jpg" alt="Site Vitrine 1" width={2848} height={4288} className="mb-4 group-hover:scale-110 transition" />
             <h3 className="text-xl font-bold mb-2 text-gray-100">Artisan</h3>
             <p className="text-gray-300 text-justify mb-4">Site moderne pour la mise en valeur des produits artisanals locaux, avec présentation des services et galerie photo.</p>
-            <Link href="#" className="mt-auto text-cyan-400 px-2 py-1 border border-cyan-400 rounded hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
+            <Link href="#projects" className="mt-auto text-emerald-600 px-2 py-1 border border-emerald-600 rounded hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
           </div>
           {/* Projet vitrine 2 */}
           <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex flex-col items-center group">
             <Image src="/images/association.jpg" alt="Site Vitrine 2" width={2848} height={4288} className="mb-4 group-hover:scale-110 transition" />
             <h3 className="text-xl font-bold mb-2 text-gray-100">Association</h3>
             <p className="text-gray-300 text-justify mb-4">Ce site a pour objectif accompagner les femmes afin de promouvoir leur autonomie, leur leadership et leur rôle actif dans le developpement de la communauté.</p>
-            <Link href="#" className="mt-auto text-cyan-400 px-2 py-1 border border-cyan-400 rounded  hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
+            <Link href="#projects" className="mt-auto text-emerald-600 px-2 py-1 border border-emerald-600 rounded  hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
           </div>
           {/* Projet vitrine 3 */}
           <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex flex-col items-center group">
             <Image src="/images/formation.jpg" alt="Site Vitrine 3" width={2848} height={4288} className="mb-4 group-hover:scale-110 transition" />
             <h3 className="text-xl font-bold mb-2 text-gray-100">Formation</h3>
             <p className="text-gray-300 text-justify mb-4">Site pour les formations certifiantes dans de divers domaines: technique, professionnel et academique.</p>
-            <Link href="#" className="  mt-auto text-cyan-400 px-2 py-1 border border-cyan-400 rounded  hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
+            <Link href="#projects" className="  mt-auto text-emerald-600 px-2 py-1 border border-emerald-600 rounded  hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
           </div>
         </div>
       </section>
 
       {/* PASSION AGRICULTURE */}
       <section id="passions" className="max-w-5xl mx-auto py-10 px-4">
-        <h2 className="text-4xl font-extrabold mb-8 text-center bg-gradient-to-r from-blue-400 to-lime-300 bg-clip-text text-transparent drop-shadow-lg">Ma passion pour l'agriculture</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Ma passion pour l'agriculture</h2>
         <p className="text-xl text-gray-100 mb-10 text-justify max-w-3xl mx-auto leading-relaxed">
           L’agriculture est pour moi bien plus qu’un métier : c’est une philosophie de vie, un lien profond avec la terre et le vivant. J’aime observer la nature, cultiver, apprendre  et partager la beauté des paysages ruraux. Voici quelques clichés pris lors de mes balades et travaux, qui illustrent mon attachement à ce monde authentique et inspirant.
         </p>
@@ -203,7 +219,12 @@ export default function Home() {
                 alt={`Photo agriculture ${num}`}
                 width={400}
                 height={260}
-                className="transition-transform duration-500 group-hover:scale-105 group-hover:brightness-110 object-cover w-full h-[260px] rounded-2xl"
+                className={
+                  num === 2
+                    ? "transition-transform duration-500 group-hover:scale-105 group-hover:brightness-110 object-cover w-full h-[260px] rounded-2xl object-center"
+                    : "transition-transform duration-500 group-hover:scale-105 group-hover:brightness-110 object-cover w-full h-[260px] rounded-2xl"
+                }
+                style={num === 2 ? { objectPosition: "center 30%" } : undefined}
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-3 text-gray-100 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -250,7 +271,7 @@ export default function Home() {
             />
             <button
               type="submit"
-              className="bg-cyan-500 text-gray-900 px-6 py-2 rounded hover:bg-cyan-400 transition font-semibold"
+              className="bg-emerald-600 text-gray-900 px-6 py-2 rounded hover:bg-emerald-400 transition font-semibold"
             >
               Envoyer
             </button>
