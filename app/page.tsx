@@ -2,8 +2,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { FaReact, FaNodeJs, FaGitAlt, FaServer, FaTools, FaFolderOpen, FaHome, FaLeaf, FaEnvelope } from "react-icons/fa";
+import { useState } from "react";
+import { FaReact, FaGitAlt, FaTools, FaFolderOpen, FaHome,  FaEnvelope, FaPython, FaPhp, FaBars } from "react-icons/fa";import { FaHeart } from "react-icons/fa6";
+;
 import { SiTypescript, SiTailwindcss } from "react-icons/si";
 
 export default function Home() {
@@ -22,12 +23,13 @@ export default function Home() {
 
   // Icônes React (react-icons)
   const icons = {
-    react: <FaReact className="w-7 h-7 text-sky-500" />,
-    ts: <SiTypescript className="w-7 h-7 text-blue-600" />,
-    node: <FaNodeJs className="w-7 h-7 text-green-600" />,
-    tailwind: <SiTailwindcss className="w-7 h-7 text-cyan-400" />,
-  api: <FaServer className="w-7 h-7 text-orange-500" />,
-    git: <FaGitAlt className="w-7 h-7 text-rose-500" />,
+    python: <FaPython className="w-7 h-7 text-emerald-400"/>,
+    react: <FaReact className="w-7 h-7 text-emerald-400" />,
+    ts: <SiTypescript className="w-7 h-7 text-emerald-400" />,
+    php: <FaPhp className="w-7 h-7 text-emerald-400" />,
+    tailwind: <SiTailwindcss className="w-7 h-7 text-emerald-400" />,
+    git: <FaGitAlt className="w-7 h-7 text-emerald-400" />,
+    
   };
 
   function Navbar() {
@@ -44,15 +46,15 @@ export default function Home() {
               onClick={() => setOpen(!open)}
               aria-label="Ouvrir le menu"
             >
-              <FaReact className="w-7 h-7 text-emerald-400" />
+              <FaBars className="w-7 h-7 text-emerald-400" />
             </button>
           </div>
           <ul className="hidden sm:flex space-x-8 font-semibold text-white">
             <li><Link href="/" className="hover:text-emerald-600 flex items-center gap-2"><FaHome className="w-5 h-5 text-emerald-400" />Accueil</Link></li>
-            <li><a href="#projects" className="hover:text-emerald-600 flex items-center gap-2"><FaFolderOpen className="w-5 h-5 text-green-400" />Projets</a></li>
-            <li><a href="#skills" className="hover:text-emerald-600 flex items-center gap-2"><FaTools className="w-5 h-5 text-blue-400" />Compétences</a></li>
-            <li><a href="#passions" className="hover:text-emerald-600 flex items-center gap-2"><FaLeaf className="w-5 h-5 text-cyan-400" />Passions</a></li>
-            <li><a href="#contact" className="hover:text-emerald-600 flex items-center gap-2"><FaEnvelope className="w-5 h-5 text-rose-400" />Contact</a></li>
+            <li><a href="#projects" className="hover:text-emerald-600 flex items-center gap-2"><FaFolderOpen className="w-5 h-5 text-emerald-400" />Projets</a></li>
+            <li><a href="#skills" className="hover:text-emerald-600 flex items-center gap-2"><FaTools className="w-5 h-5 text-emerald-400" />Compétences</a></li>
+            <li><a href="#passions" className="hover:text-emerald-600 flex items-center gap-2"><FaHeart className="w-5 h-5 text-emerald-400" />Passions</a></li>
+            <li><a href="#contact" className="hover:text-emerald-600 flex items-center gap-2"><FaEnvelope className="w-5 h-5 text-emerald-400" />Contact</a></li>
           </ul>
         </div>
         {/* Menu mobile */}
@@ -66,25 +68,25 @@ export default function Home() {
             </li>
             <li>
               <a href="#projects" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <FaFolderOpen className="w-5 h-5 text-green-400" />
+                <FaFolderOpen className="w-5 h-5 text-emerald-400" />
                 Projets
               </a>
             </li>
             <li>
               <a href="#skills" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <FaTools className="w-5 h-5 text-blue-400" />
+                <FaTools className="w-5 h-5 text-emerald-400" />
                 Compétences
               </a>
             </li>
             <li>
               <a href="#passions" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <FaLeaf className="w-5 h-5 text-cyan-400" />
+                <FaHeart className="w-5 h-5 text-emerald-400" />
                 Passions
               </a>
             </li>
             <li>
               <a href="#contact" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
-                <FaEnvelope className="w-5 h-5 text-rose-400" />
+                <FaEnvelope className="w-5 h-5 text-emerald-400" />
                 Contact
               </a>
             </li>
@@ -119,15 +121,10 @@ export default function Home() {
             ML signifie MBENDA-LECA
            </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
-            <a
-              href="#projects"
-              className="px-6 py-2 bg-emerald-600  rounded hover:bg-emerald-300 transition font-semibold shadow" >
+            <a href="#projects" className="px-6 py-2 bg-emerald-600  rounded hover:bg-emerald-300 transition font-semibold shadow" >
               Voir mes projets
             </a>
-            <a
-              href="/cv"
-              className="px-6 py-2 border border-emerald-600 text-emerald-600 rounded hover:bg-gray-900 transition font-semibold shadow"
-            >
+            <a href="/cv" className="px-6 py-2 border border-emerald-600 text-emerald-600 rounded hover:bg-gray-900 transition font-semibold shadow">
               Voir mon CV
             </a>
           </div>
@@ -138,6 +135,10 @@ export default function Home() {
       <section id="skills" className="max-w-4xl mx-auto py-16 px-4">
         <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Compétences</h2>
         <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+           <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition-colors duration-300">
+            {icons.python}
+            <span className="mt-2 font-semibold text-gray-100">Python</span>
+          </li>       
           <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition-colors duration-300">
             {icons.react}
             <span className="mt-2 font-semibold text-gray-100">React / Next.js</span>
@@ -147,16 +148,12 @@ export default function Home() {
             <span className="mt-2 font-semibold text-gray-100">TypeScript</span>
           </li>
           <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition">
-            {icons.node}
-            <span className="mt-2 font-semibold text-gray-100">Node.js</span>
+            {icons.php}
+            <span className="mt-2 font-semibold text-gray-100">PHP</span>
           </li>
           <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition">
             {icons.tailwind}
             <span className="mt-2 font-semibold text-gray-100">Tailwind CSS</span>
-          </li>
-          <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition">
-            {icons.api}
-            <span className="mt-2 font-semibold text-gray-100">API REST</span>
           </li>
           <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition">
             {icons.git}
@@ -166,13 +163,13 @@ export default function Home() {
       </section>
 
       {/* PROJETS */}
-      <section id="projects" className="max-w-5xl mx-auto py-16 px-4">
+      <section id="projects" className="max-w-5xl mx-auto py-16 px-4 ">
         <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Mes projets</h2>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
           {/* Projet vitrine 1 */}
           <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-colors duration-300 p-6 flex flex-col items-center group">
             <Image src="/images/artisan1.jpg" alt="Site Vitrine 1" width={2848} height={4288} className="mb-4 group-hover:scale-110 transition" />
-            <h3 className="text-xl font-bold mb-2 text-gray-100">Artisan</h3>
+            <h3 className="text-xl font-bold mb-2 text-gray-100">Artisanat</h3>
             <p className="text-gray-300 text-justify mb-4">Site moderne pour la mise en valeur des produits artisanals locaux, avec présentation des services et galerie photo.</p>
             <Link href="#projects" className="mt-auto text-emerald-600 px-2 py-1 border border-emerald-600 rounded hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
           </div>
