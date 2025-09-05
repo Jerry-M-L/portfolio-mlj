@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FaReact, FaGitAlt, FaTools, FaFolderOpen, FaHome,  FaEnvelope, FaPython, FaPhp, FaBars } from "react-icons/fa";import { FaHeart } from "react-icons/fa6";
+import { FaReact, FaGitAlt, FaTools, FaFolderOpen, FaHome,  FaEnvelope, FaPython, FaPhp, FaBars, FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp, FaYoutube, FaTiktok, FaGithub } from "react-icons/fa";
+import { FaHeart, FaX } from "react-icons/fa6";
 ;
 import { SiTypescript, SiTailwindcss } from "react-icons/si";
 
@@ -51,7 +52,7 @@ export default function Home() {
           </div>
           <ul className="hidden sm:flex space-x-8 font-semibold text-white">
             <li><Link href="/" className="hover:text-emerald-600 flex items-center gap-2"><FaHome className="w-5 h-5 text-emerald-400" />Accueil</Link></li>
-            <li><a href="#projects" className="hover:text-emerald-600 flex items-center gap-2"><FaFolderOpen className="w-5 h-5 text-emerald-400" />Projets</a></li>
+            <li><Link href="/projet" className="hover:text-emerald-600 flex items-center gap-2"><FaFolderOpen className="w-5 h-5 text-emerald-400" />Projets</Link></li>
             <li><a href="#skills" className="hover:text-emerald-600 flex items-center gap-2"><FaTools className="w-5 h-5 text-emerald-400" />Compétences</a></li>
             <li><a href="#passions" className="hover:text-emerald-600 flex items-center gap-2"><FaHeart className="w-5 h-5 text-emerald-400" />Passions</a></li>
             <li><a href="#contact" className="hover:text-emerald-600 flex items-center gap-2"><FaEnvelope className="w-5 h-5 text-emerald-400" />Contact</a></li>
@@ -67,10 +68,10 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <a href="#projects" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
+              <Link href="/projet" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
                 <FaFolderOpen className="w-5 h-5 text-emerald-400" />
                 Projets
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#skills" className="flex items-center gap-2 py-2 text-gray-100 hover:text-green-400" onClick={handleMenuClick}>
@@ -131,64 +132,8 @@ export default function Home() {
         </div>
       </header>
 
-      {/* COMPÉTENCES */}
-      <section id="skills" className="max-w-4xl mx-auto py-16 px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Compétences</h2>
-        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
-           <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition-colors duration-300">
-            {icons.python}
-            <span className="mt-2 font-semibold text-gray-100">Python</span>
-          </li>       
-          <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition-colors duration-300">
-            {icons.react}
-            <span className="mt-2 font-semibold text-gray-100">React / Next.js</span>
-          </li>
-          <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition">
-            {icons.ts}
-            <span className="mt-2 font-semibold text-gray-100">TypeScript</span>
-          </li>
-          <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition">
-            {icons.php}
-            <span className="mt-2 font-semibold text-gray-100">PHP</span>
-          </li>
-          <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition">
-            {icons.tailwind}
-            <span className="mt-2 font-semibold text-gray-100">Tailwind CSS</span>
-          </li>
-          <li className="flex flex-col items-center bg-gray-800 rounded-xl shadow p-5 hover:scale-105 transition">
-            {icons.git}
-            <span className="mt-2 font-semibold text-gray-100">Git & CI/CD</span>
-          </li>
-        </ul>
-      </section>
-
-      {/* PROJETS */}
-      <section id="projects" className="max-w-5xl mx-auto py-16 px-4 ">
-        <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Mes projets</h2>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
-          {/* Projet vitrine 1 */}
-          <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-colors duration-300 p-6 flex flex-col items-center group">
-            <Image src="/images/artisan1.jpg" alt="Site Vitrine 1" width={2848} height={4288} className="mb-4 group-hover:scale-110 transition" />
-            <h3 className="text-xl font-bold mb-2 text-gray-100">Artisanat</h3>
-            <p className="text-gray-300 text-justify mb-4">Site moderne pour la mise en valeur des produits artisanals locaux, avec présentation des services et galerie photo.</p>
-            <Link href="#projects" className="mt-auto text-emerald-600 px-2 py-1 border border-emerald-600 rounded hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
-          </div>
-          {/* Projet vitrine 2 */}
-          <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex flex-col items-center group">
-            <Image src="/images/association.jpg" alt="Site Vitrine 2" width={2848} height={4288} className="mb-4 group-hover:scale-110 transition" />
-            <h3 className="text-xl font-bold mb-2 text-gray-100">Association</h3>
-            <p className="text-gray-300 text-justify mb-4">Ce site a pour objectif accompagner les femmes afin de promouvoir leur autonomie, leur leadership et leur rôle actif dans le developpement de la communauté.</p>
-            <Link href="#projects" className="mt-auto text-emerald-600 px-2 py-1 border border-emerald-600 rounded  hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
-          </div>
-          {/* Projet vitrine 3 */}
-          <div className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex flex-col items-center group">
-            <Image src="/images/formation.jpg" alt="Site Vitrine 3" width={2848} height={4288} className="mb-4 group-hover:scale-110 transition" />
-            <h3 className="text-xl font-bold mb-2 text-gray-100">Formation</h3>
-            <p className="text-gray-300 text-justify mb-4">Site pour les formations certifiantes dans de divers domaines: technique, professionnel et academique.</p>
-            <Link href="#projects" className="  mt-auto text-emerald-600 px-2 py-1 border border-emerald-600 rounded  hover:bg-gray-900 transition font-semibold ">Voir le projet</Link>
-          </div>
-        </div>
-      </section>
+      
+      
 
       {/* PASSION AGRICULTURE */}
       <section id="passions" className="max-w-5xl mx-auto py-10 px-4">
@@ -222,46 +167,67 @@ export default function Home() {
 
       {/* FORMULAIRE DE CONTACT*/}
       <section id="contact" className="max-w-xl mx-auto py-16 px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Contactez-moi</h2>
-        {sent ? (
-          <div className="bg-green-900 text-green-200 p-4 rounded mb-4 text-center">Merci pour votre message ! Je vous répondrai rapidement.</div>
-        ) : (
-          <form onSubmit={handleSubmit} className="bg-gray-800 rounded-xl shadow p-8 flex flex-col gap-4 transition-colors duration-300">
-            <input
-              type="text"
-              name="nom"
-              placeholder="Votre nom"
-              value={form.nom}
-              onChange={handleChange}
-              required
-              className="border border-gray-700 rounded px-4 py-2 bg-gray-900 text-gray-100 placeholder-gray-400"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Votre e-mail"
-              value={form.email}
-              onChange={handleChange}
-              required
-              className="border border-gray-700 rounded px-4 py-2 bg-gray-900 text-gray-100 placeholder-gray-400"
-            />
-            <textarea
-              name="message"
-              placeholder="Votre message"
-              value={form.message}
-              onChange={handleChange}
-              required
-              rows={4}
-              className="border border-gray-700 rounded px-4 py-2 bg-gray-900 text-gray-100 placeholder-gray-400"
-            />
-            <button
-              type="submit"
-              className="bg-emerald-600 text-gray-900 px-6 py-2 rounded hover:bg-emerald-400 transition font-semibold"
-            >
-              Envoyer
-            </button>
-          </form>
-        )}
+        <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Contact</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Contactez-moi</h2>
+          {sent ? (
+            <div className="bg-green-900 text-green-200 p-4 rounded mb-4 text-center">Merci pour votre message ! Je vous répondrai rapidement.</div>
+          ) : (
+            <form onSubmit={handleSubmit} className="bg-gray-800 rounded-xl shadow p-8 flex flex-col gap-4 transition-colors duration-300">
+              <input
+                type="text"
+                name="nom"
+                placeholder="Votre nom"
+                value={form.nom}
+                onChange={handleChange}
+                required
+                className="border border-gray-700 rounded px-4 py-2 bg-gray-900 text-gray-100 placeholder-gray-400"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Votre e-mail"
+                value={form.email}
+                onChange={handleChange}
+                required
+                className="border border-gray-700 rounded px-4 py-2 bg-gray-900 text-gray-100 placeholder-gray-400"
+              />
+              <textarea
+                name="message"
+                placeholder="Votre message"
+                value={form.message}
+                onChange={handleChange}
+                required
+                rows={4}
+                className="border border-gray-700 rounded px-4 py-2 bg-gray-900 text-gray-100 placeholder-gray-400"
+              />
+              <button
+                type="submit"
+                className="bg-emerald-600 text-gray-900 px-6 py-2 rounded hover:bg-emerald-400 transition font-semibold"
+              >
+                Envoyer
+              </button>
+            </form>
+          
+          )}
+      </section>
+      <section>
+                <div className="bg-gray-800 rounded-xl shadow p-6 flex flex-col gap-3 items-center">
+            <h3 className="text-xl font-bold mb-2 text-gray-100">Retrouvez-moi sur les réseaux :</h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              <link rel="stylesheet" href="https://www.linkedin.com/in/jerry-mbenda-leca-957453232"/>
+              <a href="https://www.linkedin.com/in/jerry-mbenda-leca-957453232/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 font-semibold hover:underline"><FaLinkedin className="w-6 h-6 text-blue-500" /></a>
+              <a href="https://www.facebook.com/Jerry ML" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 font-semibold hover:underline"><FaFacebook className="w-6 h-6 text-blue-600" /></a>
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 font-semibold hover:underline"><FaX className="w-6 h-6 text-gray-100" /></a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 font-semibold hover:underline"><FaInstagram className="w-6 h-6 text-pink-500" /></a>
+              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 font-semibold hover:underline"><FaWhatsapp className="w-6 h-6 text-green-500" /></a>
+              <a href="https://www.youtube.com/@" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 font-semibold hover:underline"><FaYoutube className="w-6 h-6 text-red-600" /></a>
+              <a href="https://www.tiktok.com/@" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 font-semibold hover:underline"><FaTiktok className="w-6 h-6 text-black" /></a>
+              <a  href="https://github.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 font-semibold hover:underline">< FaGithub className="w-6 h-6 text-gray-100" /></a>
+            </div>
+          </div>
+          <div >
+                    © Jerry MBENDA-LECA
+          </div>
       </section>
     </>
   );

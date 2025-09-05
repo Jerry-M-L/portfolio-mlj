@@ -11,7 +11,7 @@ export default function CVPage() {
       </div>
 
   <iframe
-        src="/CV.pdf"
+        src="/images/CV.pdf"
         title="Mon CV"
         className="w-full h-[180vh] border rounded shadow"
       />
