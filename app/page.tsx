@@ -32,10 +32,24 @@ export default function Home() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
-    setForm({ nom: "", email: "", message: "" });
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nom: form.nom,
+        email: form.email,
+        message: form.message,
+      }),
+    });
+    const data = await res.json();
+    if (data.success) {
+      setSent(true);
+      setForm({ nom: "", email: "", message: "" });
+    } else {
+      alert('Erreur : ' + (data.error || 'Envoi impossible'));
+    }
   };
 
   // Icônes React (react-icons)
