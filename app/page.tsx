@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -13,6 +14,7 @@ import {
   FaPhp,
   FaBars,
   FaUser,
+  FaGithub,
 } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import {
@@ -25,6 +27,8 @@ import {
 export default function Home() {
   const [form, setForm] = useState({ nom: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
+  const currentYear = new Date().getFullYear();
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -59,7 +63,7 @@ export default function Home() {
     ts: <SiTypescript className="w-7 h-7 text-emerald-400" />,
     php: <FaPhp className="w-7 h-7 text-emerald-400" />,
     tailwind: <SiTailwindcss className="w-7 h-7 text-emerald-400" />,
-    git: <FaGitAlt className="w-7 h-7 text-emerald-400" />,
+    git: <FaGithub className="w-7 h-7 text-emerald-400" />,
   };
 
   function Navbar() {
@@ -536,7 +540,7 @@ export default function Home() {
         )}
       </section>
       <section>
-        <div>© Jerry MBENDA-LECA</div>
+        <div>©{currentYear} Jerry MBENDA-LECA</div>
       </section>
     </>
   );
